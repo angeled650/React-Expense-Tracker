@@ -18,7 +18,7 @@ const IncomeExpenses = () => {
 
   return (
     <>
-      <div className="flex justify-between my-2">
+      <div className="flex justify-between my-2 gap-x-5">
         <h4>Ingreso</h4>
         <p>{income}</p>
       </div>

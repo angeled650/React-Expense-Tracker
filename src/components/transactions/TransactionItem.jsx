@@ -4,9 +4,9 @@ import { useGlobalState } from "../../context/GlobalState";
 const TransactionItem = ({ transaction }) => {
   const { deleteTransaction } = useGlobalState();
   return (
-    <li className="bg-zinc-600 text-white px-3 py-1 rounded-lg mb-2 w-full flex justify-between items-center">
+    <li className="bg-zinc-600 text-white text-center px-3 py-1 rounded-lg mb-2 w-full flex flex-col md:flex-row justify-between items-center">
       <p className="text-sm">{transaction.description}</p>
-      <div>
+      <div className="flex flex-col md:block md:flex-row">
         <span>
           {transaction.amount >= 0
             ? "$" + transaction.amount

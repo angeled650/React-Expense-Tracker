@@ -7,21 +7,17 @@ const ExpenseChart = () => {
   const totalIncome = transactions
     .filter((transaction) => transaction.amount >= 0)
     .reduce((acc, transaction) => (acc += transaction.amount), 0);
-  console.log(`Income: ${totalIncome}`);
 
   const totalExpense =
     transactions
       .filter((transaction) => transaction.amount < 0)
       .reduce((acc, transaction) => (acc += transaction.amount), 0) * -1;
-  console.log(`Expense: ${totalExpense}`);
 
   let totalExpensesPercentage =
     totalIncome > 0 ? Math.round((totalExpense / totalIncome) * 100) : 100;
-  console.log(`Expense %: ${totalExpensesPercentage}`);
 
   let totalIncomePercentage =
     totalExpense > 0 ? 100 - totalExpensesPercentage : 100;
-  console.log(`Income %: ${totalIncomePercentage}`);
 
   if (totalExpensesPercentage === 100 && totalIncomePercentage === 100) {
     totalExpensesPercentage = 50;
